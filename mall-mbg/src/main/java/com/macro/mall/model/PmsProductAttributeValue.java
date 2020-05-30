@@ -1,0 +1,61 @@
+package com.macro.mall.model;
+
+import io.swagger.annotations.ApiModelProperty;
+
+import java.io.Serializable;
+
+public class PmsProductAttributeValue implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private Long id;
+    private Long productId;
+    private Long productAttributeId;
+    @ApiModelProperty(value = "Manually add values for specifications or parameters, single values for parameters, separated by commas if there are multiple specifications")
+    private String value;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
+
+    public Long getProductAttributeId() {
+        return productAttributeId;
+    }
+
+    public void setProductAttributeId(Long productAttributeId) {
+        this.productAttributeId = productAttributeId;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", productId=").append(productId);
+        sb.append(", productAttributeId=").append(productAttributeId);
+        sb.append(", value=").append(value);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
+    }
+}

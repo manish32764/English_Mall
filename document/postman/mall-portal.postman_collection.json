@@ -1,0 +1,780 @@
+{
+  "variables": [],
+  "info": {
+    "name": "mall-portal",
+    "_postman_id": "bb2ab4ed-fa53-9c01-9fe1-ef1568038701",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      “
+    name
+    ”
+    :
+    “
+    Member
+    Login
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/sso/login",
+      "method": "POST",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "description": ""
+        }
+      ],
+      "body": {
+        "mode": "urlencoded",
+        "urlencoded": [
+          {
+            "key": "username",
+            "value": "test",
+            "description": "",
+            "type": "text"
+          },
+          {
+            "key": "password",
+            "value": "123",
+            "description": "",
+            "type": "text"
+          }
+        ]
+      },
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Get
+    Cart
+    List
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/cart/list",
+      "method": "GET",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Empty
+    cart
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/cart/clear",
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Add
+    to
+    cart
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/cart/add",
+      "method": "POST",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        “
+        raw
+        ”
+        :
+        “
+    {
+      \
+    r
+    \
+    n
+    \
+    " price\”: 5499,\ r\ n\ "
+    productId
+    \
+    ”
+    :
+    29,
+    \
+    r
+    \
+    n
+    \
+    ”
+    productName
+    \
+    ”
+    :
+    \
+    "Apple iPhone 8 Plus\”,\ r\ n\ "
+    productSkuCode
+    \
+    ”
+    :
+    \
+    ”
+    201808270029001
+    \
+    ”,
+    \
+    r
+    \
+    n
+    \
+    "productSkuId\”: 106,\ r\ n\ "
+    productSubTitle
+    \
+    “
+    :
+    \
+    "【Limited Time Sale】Apple Products Mid-Year Carnival, Enjoy Good Things, Beauty in Wisdom! >>>Check [Coverage] [Factory Warranty 2 years] to get AppleCare+ Full Service Plan. \”,\ r\ n\ "
+    quantity
+    \
+    ”
+    :
+    1,
+    \
+    r
+    \
+    n
+    \
+    "sp1\”:\ "
+    gold
+    \
+    ”,
+    \
+    r
+    \
+    n
+    \
+    "sp2\”:\ "
+    32G
+    \
+    ”,
+    \
+    r
+    \
+    n
+    \
+    "sp3\”: null\ r\ n}”
+    },
+    "description"
+    :
+    ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Get
+    shopping
+    cart
+    list
+    (including
+    promotional
+    information)
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/cart/list/promotion",
+      "method": "GET",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Modify
+    the
+    number
+    of
+    items
+    in
+    your
+    cart
+    ”,
+    "request"
+    :
+    {
+      "url": {
+        "raw": "{{portal.mall}}/cart/update/quantity?id=15&quantity=1",
+        "host": [
+          "{{portal.mall}}"
+        ],
+        "path": [
+          "cart",
+          "update",
+          "quantity"
+        ],
+        "query": [
+          {
+            "key": "id",
+            "value": "15",
+            "equals": true,
+            "description": ""
+          },
+          {
+            "key": "quantity",
+            "value": "1",
+            "equals": true,
+            "description": ""
+          }
+        ],
+        "variable": []
+      },
+      "method": "GET",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Add
+    shipping
+    address
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/address/add",
+      "method": "POST",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        “
+        raw
+        ”
+        :
+        “
+    {
+      \
+    r
+    \
+    n
+    \
+    " defaultStatus\”: 1,\ r\ n\ "
+    name
+    \
+    ”
+    :
+    \
+    "Pear\”,\ r\ n\” phoneNumber\”:\ "
+    18033441849
+    \
+    ”,
+    \
+    r
+    \
+    n
+    \
+    "postCode\”:\ "
+    518000
+    \
+    ”,
+    \
+    r
+    \
+    n
+    \
+    ”
+    city
+    \
+    ”
+    :
+    \
+    "Shenzhen\”,\ r\ n\ "
+    detailAddress
+    \
+    ”
+    :
+    \
+    "Dongxiao Street\”,\ r\ n\ "
+    province
+    \
+    ”
+    :
+    \
+    "Guangdong\”,\ r\ n\ "
+    region
+    \
+    ”
+    :
+    \
+    "Futian District\"\ r\ n}”
+    },
+    "description"
+    :
+    ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Delete
+    shipping
+    address
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/address/delete/2",
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Look
+    up
+    the
+    specified
+    shipping
+    address
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/address/3",
+      "method": "GET",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Modify
+    shipping
+    address
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/address/update/3",
+      "method": "POST",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        “
+        raw
+        ”
+        :
+        “
+    {
+      \
+    n
+    \
+    " id\”: 3,\ n\ "
+    memberId
+    \
+    ”
+    :
+    1,
+    \
+    n
+    \
+    "name\”:\ "
+    Pear
+    \
+    ”,
+    \
+    n
+    \
+    ”
+    phoneNumber
+    \
+    ”
+    :
+    \
+    "18033441849\”,\ n\ "
+    defaultStatus
+    \
+    ”
+    :
+    0,
+    \
+    n
+    \
+    "postCode \”:\ "
+    518000
+    \
+    ”,
+    \
+    n
+    \
+    "province\”:\ "
+    Guangdong
+    \
+    ”,
+    \
+    n
+    \
+    "city\”:\ "
+    Shenzhen
+    \
+    ”,
+    \
+    n
+    \
+    ”
+    region
+    \
+    ”
+    :
+    \
+    "Futian District\”,\ n\ "
+    detailAddress
+    \
+    ”
+    :
+    \
+    "Qingshui River Street\"\ n}”
+    },
+    "description"
+    :
+    ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Get
+    a
+    coupon
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/coupon/add/7",
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Get
+    a
+    list
+    of
+    member
+    coupons
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/coupon/list",
+      "method": "GET",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Get
+    Cart
+    Coupons
+    Available
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/member/coupon/list/cart/1",
+      "method": "GET",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Generate
+    confirmation
+    from
+    shopping
+    cart
+    information
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/order/confirmOrder",
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    place
+    order
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/order/generateOrder",
+      "method": "POST",
+      "header": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "body": {
+        "mode": "raw",
+        "raw": "{\r\n  \"couponId\": 2,\r\n  \"memberReceiveAddressId\": 4,\r\n  \"payType\": 0\r\n}"
+      },
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    The
+    order
+    payment
+    success
+    callback
+    ”,
+    "request"
+    :
+    {
+      "url": {
+        "raw": "{{portal.mall}}/order/paySuccess?orderId=12",
+        "host": [
+          "{{portal.mall}}"
+        ],
+        "path": [
+          "order",
+          "paySuccess"
+        ],
+        "query": [
+          {
+            "key": "orderId",
+            "value": "12",
+            "equals": true,
+            "description": ""
+          }
+        ],
+        "variable": []
+      },
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Cancel
+    timeout
+    order
+    ”,
+    "request"
+    :
+    {
+      "url": "{{portal.mall}}/order/cancelTimeOutOrder",
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    },
+    {
+      “
+    name
+    ”
+    :
+    “
+    Cancel
+    a
+    single
+    timeout
+    order
+    ”,
+    "request"
+    :
+    {
+      "url": {
+        "raw": "{{portal.mall}}/order/cancelOrder?orderId=13",
+        "host": [
+          "{{portal.mall}}"
+        ],
+        "path": [
+          "order",
+          "cancelOrder"
+        ],
+        "query": [
+          {
+            "key": "orderId",
+            "value": "13",
+            "equals": true,
+            "description": ""
+          }
+        ],
+        "variable": []
+      },
+      "method": "POST",
+      "header": [],
+      "body": {},
+      "description": ""
+    },
+    "response"
+    :
+    []
+    }
+  ]
+}
